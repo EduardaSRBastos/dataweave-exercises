@@ -1,4 +1,4 @@
 %dw 2.0
 output application/json  
 ---
-(payload orderBy $)[-1 to 0]
+"Reverse Order": (payload orderBy $)[-1 to 0]

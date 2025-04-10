@@ -61,7 +61,7 @@ payload map ((item) -> {
 %dw 2.0
 output application/json  
 ---
-payload map $ as String
+"Numbers to Strings": payload map $ as String
 ```
 
 </details>
@@ -78,13 +78,13 @@ payload map $ as String
 %dw 2.0
 output application/json  
 ---
-payload as Date as String {format: "dd-MMM-yyyy"}
+"Formatted Date": payload as Date as String {format: "dd-MMM-yyyy"}
 ```
 
 </details>
 
 
-### Exercise #5 - Reverse Alphabetical Order
+### Exercise #5 - Reverse Order
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-5">DataWeave Playground<a>
 
@@ -95,7 +95,7 @@ payload as Date as String {format: "dd-MMM-yyyy"}
 %dw 2.0
 output application/json  
 ---
-(payload orderBy $)[-1 to 0]
+"Reverse Order": (payload orderBy $)[-1 to 0]
 ```
 
 </details>
@@ -121,7 +121,7 @@ fun flatArray(array) =
   then flatten($)
 ---
 // Same result: flatten(flatten(payload))
-flatArray(payload)
+"Flatten Array": flatArray(payload)
 ```
 
 </details>
@@ -159,7 +159,41 @@ payload.input1 map ((input1Item) -> {
 %dw 2.0
 output application/json  
 ---
-payload distinctBy $
+"Unique Years": payload distinctBy $
+```
+
+</details>
+
+
+### Exercise #9 - Number of Days Between Two Dates
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-9">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+Days: daysBetween(payload.startDate, payload.endDate)
+```
+
+</details>
+
+
+### Exercise #10 - Merge Array of Objects into One Object
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-10">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+{ (payload) }
 ```
 
 </details>

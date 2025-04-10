@@ -10,4 +10,4 @@ fun flatArray(array) =
   then flatten($)
 ---
 // Same result: flatten(flatten(payload))
-flatArray(payload)
+"Flatten Array": flatArray(payload)
