@@ -197,3 +197,41 @@ output application/json
 ```
 
 </details>
+
+
+### Exercise #11 - Total Amount for Each Month
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-11">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+"Total Each Month": payload groupBy ($.date.month as String {format: "00"}) mapObject ((value, key) -> 
+  (key): {
+    total: sum(value.amount)
+  }
+)
+```
+
+</details>
+
+
+### Exercise #12 - Convert 12-Hour to 24-Hour Format
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-12">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+"12H to 24H": payload map ((item, index) -> item as LocalTime {format: "hh:mm a"} as String {format: "HH:mm"})
+```
+
+</details>
