@@ -101,7 +101,7 @@ output application/json
 </details>
 
 
-### Exercise #6 - 
+### Exercise #6 - Flatten Nested Array
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-6">DataWeave Playground<a>
 
@@ -122,6 +122,44 @@ fun flatArray(array) =
 ---
 // Same result: flatten(flatten(payload))
 flatArray(payload)
+```
+
+</details>
+
+
+### Exercise #7 - Combine Arrays by ID
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-7">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+payload.input1 map ((input1Item) -> {
+  id: input1Item.id,
+  name: input1Item.name,
+  age: (payload.input2 filter ((input2Item) -> input2Item.id == input1Item.id)).age[0]
+})
+```
+
+</details>
+
+
+### Exercise #8 - Unique Items in Array
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-8">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+payload distinctBy $
 ```
 
 </details>
