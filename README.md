@@ -12,6 +12,7 @@
   Medium - Rahul Kumar</a>
 </h2>
 
+
 ### Exercise #1 - First Letter of Each Word
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-1">DataWeave Playground<a>
@@ -27,6 +28,7 @@ Initial: payload.fullName splitBy  " " map ($[0]) joinBy ""
 ```
 
 </details>
+
 
 ### Exercise #2 - Name and Birth Year
 
@@ -47,6 +49,7 @@ payload map ((item) -> {
 
 </details>
 
+
 ### Exercise #3 - Numbers to Strings
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-3">DataWeave Playground<a>
@@ -63,6 +66,7 @@ payload map $ as String
 
 </details>
 
+
 ### Exercise #4 - Format Date
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-4">DataWeave Playground<a>
@@ -75,6 +79,49 @@ payload map $ as String
 output application/json  
 ---
 payload as Date as String {format: "dd-MMM-yyyy"}
+```
+
+</details>
+
+
+### Exercise #5 - Reverse Alphabetical Order
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-5">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+(payload orderBy $)[-1 to 0]
+```
+
+</details>
+
+
+### Exercise #6 - 
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-6">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json 
+
+fun flatArray(array) =
+  array map ((item) -> 
+    if (item is Array)
+      flatten(item)
+    else
+      item) 
+  then flatten($)
+---
+// Same result: flatten(flatten(payload))
+flatArray(payload)
 ```
 
 </details>
