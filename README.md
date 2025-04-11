@@ -296,7 +296,7 @@ genres: (payload.books groupBy $.genre) pluck ((value, key) -> {
 </details>
 
 
-### Exercise #16 - Update Values
+### Exercise #16 - Transform Object Fields
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-16">DataWeave Playground<a>
 
@@ -311,7 +311,59 @@ discountedProducts: payload.products map ((product) ->
     (product - "price") ++ {
     discountedPrice: product.price - (product.price * payload.discounts[product.category])
     })
+```
 
+</details>
+
+
+### Exercise #17 - Convert Temperature
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-17">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+temperaturesInFahrenheit: payload.temperaturesInCelsius map ($ * 9/5) + 32
+```
+
+</details>
+
+
+### Exercise #18 - Add Fields to Objects
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-18">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+discountedProducts: payload.products map ($ ++ 
+    discounted: $.price - $.price * payload.discountLookup[$.id as String] default $.price
+)
+```
+
+</details>
+
+
+### Exercise #19 - Total Amount
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-19">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+totalOrderAmount: sum(payload.orderAmounts)
 ```
 
 </details>
