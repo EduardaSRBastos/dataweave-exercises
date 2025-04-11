@@ -12,10 +12,58 @@
   Medium - Rahul Kumar</a>
 </h2>
 
+---
+
+## Table of Contents
+
+<table>
+  <tbody align="center">
+    <tr>
+      <td><a href="#exercise-1---first-letter-of-each-word"><b>Exercise #1 - First Letter of Each Word</b></a></td>
+      <td><a href="#exercise-2---name-and-birth-year"><b>Exercise #2 - Name and Birth Year</b></a></td>
+      <td><a href="#exercise-3---numbers-to-strings"><b>Exercise #3 - Numbers to Strings</b></a></td>
+      <td><a href="#exercise-4---format-date"><b>Exercise #4 - Format Date</b></a></td>
+      <td><a href="#exercise-5---reverse-order"><b>Exercise #5 - Reverse Order</b></a></td>
+    </tr>
+    <tr>
+      <td><a href="#exercise-6---flatten-nested-array"><b>Exercise #6 - Flatten Nested Array</b></a></td>
+      <td><a href="#exercise-7---combine-arrays-by-id"><b>Exercise #7 - Combine Arrays by ID</b></a></td>
+      <td><a href="#exercise-8---unique-items-in-array"><b>Exercise #8 - Unique Items in Array</b></a></td>
+      <td><a href="#exercise-9---number-of-days-between-two-dates"><b>Exercise #9 - Number of Days Between Two Dates</b></a></td>
+      <td><a href="#exercise-10---merge-array-of-objects-into-one-object"><b>Exercise #10 - Merge Array of Objects into One Object</b></a></td>
+    </tr>
+    <tr>
+      <td><a href="#exercise-11---total-amount-for-each-month"><b>Exercise #11 - Total Amount for Each Month</b></a></td>
+      <td><a href="#exercise-12---convert-12-hour-to-24-hour-format"><b>Exercise #12 - Convert 12-Hour to 24-Hour Format</b></a></td>
+      <td><a href="#exercise-13---total-duration"><b>Exercise #13 - Total Duration</b></a></td>
+      <td><a href="#exercise-14---unique-words"><b>Exercise #14 - Unique Words</b></a></td>
+      <td><a href="#exercise-15---reorganize-structure"><b>Exercise #15 - Reorganize Structure</b></a></td>
+    </tr>
+    <tr>
+      <td><a href="#exercise-16---transform-object-fields"><b>Exercise #16 - Transform Object Fields</b></a></td>
+      <td><a href="#exercise-17---convert-temperature"><b>Exercise #17 - Convert Temperature</b></a></td>
+      <td><a href="#exercise-18---add-fields-to-objects"><b>Exercise #18 - Add Fields to Objects</b></a></td>
+      <td><a href="#exercise-19---total-amount"><b>Exercise #19 - Total Amount</b></a></td>
+    </tr>
+  </tbody>
+</table>
+
+---
 
 ### Exercise #1 - First Letter of Each Word
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-1">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+{
+  "fullName": "Nagaraju Kshathriya Raghunathrao"
+}
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -33,6 +81,19 @@ Initial: payload.fullName splitBy  " " map ($[0]) joinBy ""
 ### Exercise #2 - Name and Birth Year
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-2">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+[
+  {"name": "John", "age": 25},
+  {"name": "Alice", "age": 30},
+  {"name": "Bob", "age": 22}
+]
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -55,6 +116,15 @@ payload map ((item) -> {
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-3">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+[1, 2, 3, 4, 5]
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -70,6 +140,15 @@ output application/json
 ### Exercise #4 - Format Date
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-4">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+"2022-01-01"
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -89,6 +168,15 @@ output application/json
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-5">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+["apple", "banana", "orange", "grape"]
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -104,6 +192,15 @@ output application/json
 ### Exercise #6 - Flatten Nested Array
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-6">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+[1, [2, [3, 4], 5], 6]
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -132,6 +229,24 @@ fun flatArray(array) =
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-7">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+{
+  "input1": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" }
+  ],
+  "input2": [
+    { "id": 1, "age": 25 },
+    { "id": 2, "age": 30 }
+  ]
+}
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -153,6 +268,15 @@ payload.input1 map ((input1Item) -> {
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-8">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+["2021", "1994", "2034", "2032", "2021", "2022", "1995", "2032"]
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -168,6 +292,18 @@ output application/json
 ### Exercise #9 - Number of Days Between Two Dates
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-9">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+{
+  "startDate": "2022-01-01",
+  "endDate": "2022-01-10"
+}
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -187,6 +323,19 @@ Days: daysBetween(payload.startDate, payload.endDate)
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-10">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+[
+  {"name": "Alice"},
+  {"age": 25},
+  {"city": "New York"}
+]
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -202,6 +351,20 @@ output application/json
 ### Exercise #11 - Total Amount for Each Month
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-11">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+[
+  {"date": "2022-01-05", "amount": 100},
+  {"date": "2022-01-15", "amount": 150},
+  {"date": "2022-02-10", "amount": 200},
+  {"date": "2022-02-25", "amount": 120}
+]
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -225,6 +388,15 @@ output application/json
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-12">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+["02:30 PM", "08:45 AM", "05:15 PM"]
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -240,6 +412,19 @@ output application/json
 ### Exercise #13 - Total Duration
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-13">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+[
+  {"title": "Clip1", "duration": "00:30"},
+  {"title": "Clip2", "duration": "01:15"},
+  {"title": "Clip3", "duration": "00:45"}
+]
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -264,6 +449,15 @@ output application/json
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-14">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+"Even if they are djinns, I will get djinns that can outdjinn them."
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -279,6 +473,58 @@ output application/json
 ### Exercise #15 - Reorganize Structure
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-15">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+{
+  "books": [
+    {
+      "title": "The Alchemist",
+      "genre": "Fiction",
+      "author": {
+        "name": "Paulo Coelho",
+        "birthYear": 1947
+      }
+    },
+    {
+      "title": "Sapiens",
+      "genre": "Non-Fiction",
+      "author": {
+        "name": "Yuval Noah Harari",
+        "birthYear": 1976
+      }
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "genre": "Fiction",
+      "author": {
+        "name": "Harper Lee",
+        "birthYear": 1926
+      }
+    },
+    {
+      "title": "The Lean Startup",
+      "genre": "Business",
+      "author": {
+        "name": "Eric Ries",
+        "birthYear": 1978
+      }
+    },
+    {
+      "title": "The Great Gatsby",
+      "genre": "Fiction",
+      "author": {
+        "name": "F. Scott Fitzgerald",
+        "birthYear": 1896
+      }
+    }
+  ]
+}
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -301,6 +547,25 @@ genres: (payload.books groupBy $.genre) pluck ((value, key) -> {
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-16">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+{
+  "products": [
+    {"id": 1, "name": "Laptop", "category": "Electronics", "price": 1200},
+    {"id": 2, "name": "Shirt", "category": "Apparel", "price": 25},
+    {"id": 3, "name": "Headphones", "category": "Electronics", "price": 100}
+  ],
+  "discounts": {
+    "Electronics": 0.1,
+    "Apparel": 0.05
+  }
+}
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -321,6 +586,17 @@ discountedProducts: payload.products map ((product) ->
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-17">DataWeave Playground<a>
 
 <details>
+  <summary>Input</summary>
+
+```json
+{
+  "temperaturesInCelsius": [0, 10, 25, 30, -5]
+}
+```
+
+</details>
+
+<details>
   <summary>Script</summary>
 
 ```dataweave
@@ -336,6 +612,25 @@ temperaturesInFahrenheit: payload.temperaturesInCelsius map ($ * 9/5) + 32
 ### Exercise #18 - Add Fields to Objects
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-18">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+{
+  "products": [
+    {"id": 1, "name": "Laptop", "price": 1200},
+    {"id": 2, "name": "Shirt", "price": 25},
+    {"id": 3, "name": "Headphones", "price": 100}
+  ],
+  "discountLookup": {
+    "1": 0.1,
+    "2": 0.05
+  }
+}
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
@@ -355,6 +650,17 @@ discountedProducts: payload.products map ($ ++
 ### Exercise #19 - Total Amount
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-19">DataWeave Playground<a>
+
+<details>
+  <summary>Input</summary>
+
+```json
+{
+  "orderAmounts": [120, 50, 75, 200, 100]
+}
+```
+
+</details>
 
 <details>
   <summary>Script</summary>
