@@ -235,3 +235,42 @@ output application/json
 ```
 
 </details>
+
+
+### Exercise #13 - Total Duration
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-13">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+"Total Duration": sum(payload.duration map ( 
+  do {
+    var parts = $ splitBy ":"
+    ---
+    (parts[0] + parts[1] / 60) as Number
+}))
+```
+
+</details>
+
+
+### Exercise #14 - Unique Words
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-14">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+"Unique Words": payload filter $ != "," splitBy  " " distinctBy $
+```
+
+</details>
