@@ -274,3 +274,44 @@ output application/json
 ```
 
 </details>
+
+
+### Exercise #15 - Reorganize Structure
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-15">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+genres: (payload.books groupBy $.genre) pluck ((value, key) -> {
+  name: key,
+  authors: value.author
+})
+```
+
+</details>
+
+
+### Exercise #16 - Update Values
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-16">DataWeave Playground<a>
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json  
+---
+discountedProducts: payload.products map ((product) -> 
+    (product - "price") ++ {
+    discountedPrice: product.price - (product.price * payload.discounts[product.category])
+    })
+
+```
+
+</details>

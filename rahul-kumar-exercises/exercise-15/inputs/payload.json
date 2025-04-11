@@ -1,0 +1,44 @@
+{
+  "books": [
+    {
+      "title": "The Alchemist",
+      "genre": "Fiction",
+      "author": {
+        "name": "Paulo Coelho",
+        "birthYear": 1947
+      }
+    },
+    {
+      "title": "Sapiens",
+      "genre": "Non-Fiction",
+      "author": {
+        "name": "Yuval Noah Harari",
+        "birthYear": 1976
+      }
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "genre": "Fiction",
+      "author": {
+        "name": "Harper Lee",
+        "birthYear": 1926
+      }
+    },
+    {
+      "title": "The Lean Startup",
+      "genre": "Business",
+      "author": {
+        "name": "Eric Ries",
+        "birthYear": 1978
+      }
+    },
+    {
+      "title": "The Great Gatsby",
+      "genre": "Fiction",
+      "author": {
+        "name": "F. Scott Fitzgerald",
+        "birthYear": 1896
+      }
+    }
+  ]
+}
