@@ -6,53 +6,51 @@
 
 <br>
 
-<details>
+
+<h2> Exercises from
+  <a href="https://medium.com/@rahulkumarofficial/dataweave-practice-made-easy-solved-questions-for-skill-building-7c2aa4c82376">
+  Medium - Rahul Kumar</a>
+</h2>
+
+
+### Table of Contents
+
+<table>
+  <tbody align="center">
+    <tr>
+      <td><a href="#exercise-1---first-letter-of-each-word"><b>Exercise #1 - First Letter of Each Word</b></a></td>
+      <td><a href="#exercise-2---name-and-birth-year"><b>Exercise #2 - Name and Birth Year</b></a></td>
+      <td><a href="#exercise-3---numbers-to-strings"><b>Exercise #3 - Numbers to Strings</b></a></td>
+      <td><a href="#exercise-4---format-date"><b>Exercise #4 - Format Date</b></a></td>
+      <td><a href="#exercise-5---reverse-order"><b>Exercise #5 - Reverse Order</b></a></td>
+    </tr>
+    <tr>
+      <td><a href="#exercise-6---flatten-nested-array"><b>Exercise #6 - Flatten Nested Array</b></a></td>
+      <td><a href="#exercise-7---combine-arrays-by-id"><b>Exercise #7 - Combine Arrays by ID</b></a></td>
+      <td><a href="#exercise-8---unique-items-in-array"><b>Exercise #8 - Unique Items in Array</b></a></td>
+      <td><a href="#exercise-9---number-of-days-between-two-dates"><b>Exercise #9 - Number of Days Between Two Dates</b></a></td>
+      <td><a href="#exercise-10---merge-array-of-objects-into-one-object"><b>Exercise #10 - Merge Array of Objects into One Object</b></a></td>
+    </tr>
+    <tr>
+      <td><a href="#exercise-11---total-amount-for-each-month"><b>Exercise #11 - Total Amount for Each Month</b></a></td>
+      <td><a href="#exercise-12---convert-12-hour-to-24-hour-format"><b>Exercise #12 - Convert 12-Hour to 24-Hour Format</b></a></td>
+      <td><a href="#exercise-13---total-duration"><b>Exercise #13 - Total Duration</b></a></td>
+      <td><a href="#exercise-14---unique-words"><b>Exercise #14 - Unique Words</b></a></td>
+      <td><a href="#exercise-15---reorganize-structure"><b>Exercise #15 - Reorganize Structure</b></a></td>
+    </tr>
+    <tr>
+      <td><a href="#exercise-16---transform-object-fields"><b>Exercise #16 - Transform Object Fields</b></a></td>
+      <td><a href="#exercise-17---convert-temperature"><b>Exercise #17 - Convert Temperature</b></a></td>
+      <td><a href="#exercise-18---add-fields-to-objects"><b>Exercise #18 - Add Fields to Objects</b></a></td>
+      <td><a href="#exercise-19---total-amount"><b>Exercise #19 - Total Amount</b></a></td>
+    </tr>
+  </tbody>
+</table>
   
-  <summary>
-    <h2>Medium - 
-      <a href="https://medium.com/@rahulkumarofficial/dataweave-practice-made-easy-solved-questions-for-skill-building-7c2aa4c82376">
-      Rahul Kumar</a>
-    </h2>
-  </summary>
-  
-  ---
-  
-  ## Table of Contents
-  
-  <table>
-    <tbody align="center">
-      <tr>
-        <td><a href="#exercise-1---first-letter-of-each-word"><b>Exercise #1 - First Letter of Each Word</b></a></td>
-        <td><a href="#exercise-2---name-and-birth-year"><b>Exercise #2 - Name and Birth Year</b></a></td>
-        <td><a href="#exercise-3---numbers-to-strings"><b>Exercise #3 - Numbers to Strings</b></a></td>
-        <td><a href="#exercise-4---format-date"><b>Exercise #4 - Format Date</b></a></td>
-        <td><a href="#exercise-5---reverse-order"><b>Exercise #5 - Reverse Order</b></a></td>
-      </tr>
-      <tr>
-        <td><a href="#exercise-6---flatten-nested-array"><b>Exercise #6 - Flatten Nested Array</b></a></td>
-        <td><a href="#exercise-7---combine-arrays-by-id"><b>Exercise #7 - Combine Arrays by ID</b></a></td>
-        <td><a href="#exercise-8---unique-items-in-array"><b>Exercise #8 - Unique Items in Array</b></a></td>
-        <td><a href="#exercise-9---number-of-days-between-two-dates"><b>Exercise #9 - Number of Days Between Two Dates</b></a></td>
-        <td><a href="#exercise-10---merge-array-of-objects-into-one-object"><b>Exercise #10 - Merge Array of Objects into One Object</b></a></td>
-      </tr>
-      <tr>
-        <td><a href="#exercise-11---total-amount-for-each-month"><b>Exercise #11 - Total Amount for Each Month</b></a></td>
-        <td><a href="#exercise-12---convert-12-hour-to-24-hour-format"><b>Exercise #12 - Convert 12-Hour to 24-Hour Format</b></a></td>
-        <td><a href="#exercise-13---total-duration"><b>Exercise #13 - Total Duration</b></a></td>
-        <td><a href="#exercise-14---unique-words"><b>Exercise #14 - Unique Words</b></a></td>
-        <td><a href="#exercise-15---reorganize-structure"><b>Exercise #15 - Reorganize Structure</b></a></td>
-      </tr>
-      <tr>
-        <td><a href="#exercise-16---transform-object-fields"><b>Exercise #16 - Transform Object Fields</b></a></td>
-        <td><a href="#exercise-17---convert-temperature"><b>Exercise #17 - Convert Temperature</b></a></td>
-        <td><a href="#exercise-18---add-fields-to-objects"><b>Exercise #18 - Add Fields to Objects</b></a></td>
-        <td><a href="#exercise-19---total-amount"><b>Exercise #19 - Total Amount</b></a></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  ---
-  
+  <details>
+    
+  <summary><h3>Exercises</h3></summary>
+    
   ### Exercise #1 - First Letter of Each Word
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-1" target="_blank">DataWeave Playground<a>
@@ -679,32 +677,31 @@
 
 </details>
 
+---
+
+<h2>Exercises from
+  <a href="https://medium.com/another-integration-blog/deep-dive-into-dataweave-practical-exercises-for-advanced-users-27c1b7a565a7">
+  Medium - Faizan Arif</a>
+</h2>
+
+
+### Table of Contents
+
+<table>
+  <tbody align="center">
+    <tr>
+      <td><a href="#exercise-1---dynamic-data-transformation-with-functions"><b>Exercise #1 - Dynamic Data Transformation with Functions</b></a></td>
+      <td><a href="#exercise-2---enrich-json-structure"><b>Exercise #2 - Enrich JSON Structure</b></a></td>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
+</table>
+
 
 <details>
-  
-  <summary>
-    <h2>Medium - 
-      <a href="https://medium.com/another-integration-blog/deep-dive-into-dataweave-practical-exercises-for-advanced-users-27c1b7a565a7">
-      Faizan Arif</a>
-    </h2>
-  </summary>
-  
-  ---
-  
-  ## Table of Contents
-  
-  <table>
-    <tbody align="center">
-      <tr>
-        <td><a href="#exercise-1---dynamic-data-transformation-with-functions"><b>Exercise #1 - Dynamic Data Transformation with Functions</b></a></td>
-        <td><a href="#exercise-2---enrich-json-structure"><b>Exercise #2 - Enrich JSON Structure</b></a></td>
-      </tr>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
-  
-  ---
+
+  <summary><h3>Exercises</h3></summary>
   
   ### Exercise #1 - Dynamic Data Transformation with Functions
   
