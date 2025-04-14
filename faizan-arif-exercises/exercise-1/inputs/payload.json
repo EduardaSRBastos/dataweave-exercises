@@ -1,0 +1,9 @@
+{
+  "data": [
+    { "type": "text", "content": "Hello, World!" },
+    { "type": "number", "content": 42 },
+    { "type": "boolean", "content": true },
+    { "type": "array", "content": [1, 2, 3] },
+    { "type": "object", "content": { "key": "value" } }
+  ]
+}

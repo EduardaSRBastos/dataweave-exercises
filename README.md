@@ -9,10 +9,9 @@
 <details>
   
   <summary>
-    <h2>
-      DataWeave exercises from 
+    <h2>Medium - 
       <a href="https://medium.com/@rahulkumarofficial/dataweave-practice-made-easy-solved-questions-for-skill-building-7c2aa4c82376">
-      Medium - Rahul Kumar</a>
+      Rahul Kumar</a>
     </h2>
   </summary>
   
@@ -678,4 +677,146 @@
   
   </details>
 
+</details>
+
+
+<details>
+  
+  <summary>
+    <h2>Medium - 
+      <a href="https://medium.com/another-integration-blog/deep-dive-into-dataweave-practical-exercises-for-advanced-users-27c1b7a565a7">
+      Faizan Arif</a>
+    </h2>
+  </summary>
+  
+  ---
+  
+  ## Table of Contents
+  
+  <table>
+    <tbody align="center">
+      <tr>
+        <td><a href="#exercise-1---dynamic-data-transformation-with-functions"><b>Exercise #1 - Dynamic Data Transformation with Functions</b></a></td>
+        <td><a href="#exercise-2---enrich-json-structure"><b>Exercise #2 - Enrich JSON Structure</b></a></td>
+      </tr>
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+  
+  ---
+  
+  ### Exercise #1 - Dynamic Data Transformation with Functions
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-1" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+{
+  "data": [
+    { "type": "text", "content": "Hello, World!" },
+    { "type": "number", "content": 42 },
+    { "type": "boolean", "content": true },
+    { "type": "array", "content": [1, 2, 3] },
+    { "type": "object", "content": { "key": "value" } }
+  ]
+}
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+output application/json
+
+fun transformContent(contentType, content) =
+  contentType match{
+    case "text" ->
+      transformedContent: upper(content as String)
+    case "number" ->
+      transformedContent: content * 2
+    case "boolean" ->
+      transformedContent: !content
+    case "array" ->
+      transformedContent: content map ($ ++ 0) as Number
+    case "object" ->
+      transformedContent: content mapObject { (upper($$)): upper($) }
+  }
+---
+payload.data map ((item) -> 
+  (item - "content") ++ (transformContent(item."type", item.content)))
+  ```
+  
+  </details>
+
+
+  ### Exercise #2 - Enrich JSON Structure
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-2" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+{
+  "orders": [
+    {
+      "orderId": "A001",
+      "customer": {
+        "id": "C001",
+        "name": "Amit Bannerjee",
+        "address": "123 Main St"
+      },
+      "items": [
+        { "productId": "P001", "quantity": 2 },
+        { "productId": "P002", "quantity": 1 }
+      ]
+    },
+    {
+      "orderId": "A002",
+      "customer": {
+        "id": "C002",
+        "name": "Kalyan Singh",
+        "address": "456 Oak St"
+      },
+      "items": [
+        { "productId": "P001", "quantity": 1 },
+        { "productId": "P003", "quantity": 5 }
+      ]
+    }
+  ],
+  "products": [
+    { "id": "P001", "name": "Widget", "price": 9.99 },
+    { "id": "P002", "name": "Gadget", "price": 14.99 },
+    { "id": "P003", "name": "Doohickey", "price": 19.99 }
+  ]
+}
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+  %dw 2.0
+output application/json  
+---
+payload.orders map ((order) -> {
+  orderId: order.orderId,
+  customer: order.customer.name,
+  items: order.items map (item) -> 
+    item ++ ((payload.products filter ($.id contains item.productId))[0]),
+  total: sum(order.items map (item) -> 
+    item.quantity * ((payload.products filter ($.id contains item.productId)).price[0]))
+})
+  ```
+  
+  </details>
+  
 </details>

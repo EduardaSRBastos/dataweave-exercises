@@ -1,0 +1,33 @@
+{
+  "orders": [
+    {
+      "orderId": "A001",
+      "customer": {
+        "id": "C001",
+        "name": "Amit Bannerjee",
+        "address": "123 Main St"
+      },
+      "items": [
+        { "productId": "P001", "quantity": 2 },
+        { "productId": "P002", "quantity": 1 }
+      ]
+    },
+    {
+      "orderId": "A002",
+      "customer": {
+        "id": "C002",
+        "name": "Kalyan Singh",
+        "address": "456 Oak St"
+      },
+      "items": [
+        { "productId": "P001", "quantity": 1 },
+        { "productId": "P003", "quantity": 5 }
+      ]
+    }
+  ],
+  "products": [
+    { "id": "P001", "name": "Widget", "price": 9.99 },
+    { "id": "P002", "name": "Gadget", "price": 14.99 },
+    { "id": "P003", "name": "Doohickey", "price": 19.99 }
+  ]
+}
