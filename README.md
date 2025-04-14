@@ -387,13 +387,13 @@
   ```
   
   </details>
-   
+ 
+   </tr>
   </td>
-  
- </tr>
-  </tbody>
-</table> 
-  
+
+  <tr>
+   <td>
+   
   ### Exercise #11 - Total Amount for Each Month
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-11">DataWeave Playground<a>
@@ -428,6 +428,9 @@
   
   </details>
   
+  </td>
+  
+   <td>
   
   ### Exercise #12 - Convert 12-Hour to 24-Hour Format
   
@@ -454,6 +457,11 @@
   
   </details>
   
+   </tr>
+  </td>
+
+  <tr>
+   <td>
   
   ### Exercise #13 - Total Duration
   
@@ -489,6 +497,9 @@
   
   </details>
   
+  </td>
+  
+   <td>
   
   ### Exercise #14 - Unique Words
   
@@ -515,7 +526,12 @@
   
   </details>
   
-  
+   </tr>
+  </td>
+
+  <tr>
+   <td>
+   
   ### Exercise #15 - Reorganize Structure
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-15">DataWeave Playground<a>
@@ -587,6 +603,9 @@
   
   </details>
   
+  </td>
+  
+   <td>
   
   ### Exercise #16 - Transform Object Fields
   
@@ -626,7 +645,12 @@
   
   </details>
   
-  
+   </tr>
+  </td>
+
+  <tr>
+   <td>
+   
   ### Exercise #17 - Convert Temperature
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-17">DataWeave Playground<a>
@@ -654,6 +678,9 @@
   
   </details>
   
+  </td>
+  
+   <td>
   
   ### Exercise #18 - Add Fields to Objects
   
@@ -692,7 +719,12 @@
   
   </details>
   
-  
+   </tr>
+  </td>
+
+  <tr>
+   <td>
+   
   ### Exercise #19 - Total Amount
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-19">DataWeave Playground<a>
@@ -720,9 +752,16 @@
   
   </details>
 
+  </td>
+  
+  </tbody>
+</table> 
 
+<br>
 
 ---
+
+<br>
 
 <h2>Exercises from
   <a href="https://medium.com/another-integration-blog/deep-dive-into-dataweave-practical-exercises-for-advanced-users-27c1b7a565a7">
@@ -744,10 +783,13 @@
 </table>
 
 
-<details>
+<h3>Exercises</h3>
 
-  <summary><h3>Exercises</h3></summary>
-  
+  <table>
+  <tbody align="center">
+    <tr>
+    <td>
+      
   ### Exercise #1 - Dynamic Data Transformation with Functions
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-1" target="_blank">DataWeave Playground<a>
@@ -796,6 +838,9 @@ payload.data map ((item) ->
   
   </details>
 
+  </td>
+  
+  <td>
 
   ### Exercise #2 - Enrich JSON Structure
   
@@ -860,5 +905,9 @@ payload.orders map ((order) -> {
   ```
   
   </details>
+    
+  </td>
   
-</details>
+  </tbody>
+</table> 
+
