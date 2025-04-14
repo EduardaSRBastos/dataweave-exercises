@@ -47,9 +47,14 @@
   </tbody>
 </table>
   
-  <details>
+
     
-  <summary><h3>Exercises</h3></summary>
+<h3>Exercises</h3>
+
+<table>
+  <tbody align="center">
+    <tr>
+    <td>
     
   ### Exercise #1 - First Letter of Each Word
   
@@ -77,8 +82,11 @@
   ```
   
   </details>
+
+  </td>
   
-  
+ <td>
+   
   ### Exercise #2 - Name and Birth Year
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-2">DataWeave Playground<a>
@@ -111,6 +119,11 @@
   
   </details>
   
+   </tr>
+  </td>
+
+  <tr>
+   <td>
   
   ### Exercise #3 - Numbers to Strings
   
@@ -136,8 +149,11 @@
   ```
   
   </details>
+   
+  </td>
   
-  
+   <td>
+     
   ### Exercise #4 - Format Date
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-4">DataWeave Playground<a>
@@ -162,7 +178,12 @@
   ```
   
   </details>
-  
+   
+   </tr>
+  </td>
+
+  <tr>
+   <td>
   
   ### Exercise #5 - Reverse Order
   
@@ -188,8 +209,11 @@
   ```
   
   </details>
+   
+  </td>
   
-  
+   <td>
+     
   ### Exercise #6 - Flatten Nested Array
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-6">DataWeave Playground<a>
@@ -223,8 +247,13 @@
   ```
   
   </details>
-  
-  
+   
+   </tr>
+  </td>
+
+  <tr>
+   <td>
+   
   ### Exercise #7 - Combine Arrays by ID
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-7">DataWeave Playground<a>
@@ -262,8 +291,11 @@
   ```
   
   </details>
+   
+  </td>
   
-  
+  <td>
+     
   ### Exercise #8 - Unique Items in Array
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-8">DataWeave Playground<a>
@@ -288,7 +320,12 @@
   ```
   
   </details>
-  
+   
+   </tr>
+  </td>
+
+  <tr>
+   <td>
   
   ### Exercise #9 - Number of Days Between Two Dates
   
@@ -317,8 +354,11 @@
   ```
   
   </details>
+   
+  </td>
   
-  
+  <td>
+     
   ### Exercise #10 - Merge Array of Objects into One Object
   
   <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=rahul-kumar-exercises%2Fexercise-10">DataWeave Playground<a>
@@ -347,7 +387,12 @@
   ```
   
   </details>
+   
+  </td>
   
+ </tr>
+  </tbody>
+</table> 
   
   ### Exercise #11 - Total Amount for Each Month
   
@@ -675,7 +720,7 @@
   
   </details>
 
-</details>
+
 
 ---
 
