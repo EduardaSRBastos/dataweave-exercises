@@ -8,12 +8,12 @@
 
 ## Table of Contents
 
-- #### [Exercises from Medium - Rahul Kumar](#-exercises-from----medium---rahul-kumar)
-- #### [Exercises from Medium - Faizan Arif](#-exercises-from----medium---faizan-arif)
+- #### [Exercises from Medium - Rahul Kumar](#exercises-from----medium---rahul-kumar)
+- #### [Exercises from Medium - Faizan Arif](#exercises-from----medium---faizan-arif)
 
 <br>
 
-<h2> Exercises from
+<h2>Exercises from
   <a href="https://medium.com/@rahulkumarofficial/dataweave-practice-made-easy-solved-questions-for-skill-building-7c2aa4c82376">
   Medium - Rahul Kumar</a>
 </h2>
