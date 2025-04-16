@@ -8,8 +8,8 @@
 
 ## Table of Contents
 
-- #### [Exercises from Medium - Rahul Kumar](#exercises-from-medium---rahul-kumar)
-- #### [Exercises from Medium - Faizan Arif](#exercises-from-medium---faizan-arif)
+- #### [Exercises from Medium - Rahul Kumar](#-exercises-from----medium---rahul-kumar)
+- #### [Exercises from Medium - Faizan Arif](#-exercises-from----medium---faizan-arif)
 
 <br>
 
@@ -788,7 +788,7 @@
       <td><a href="#exercise-6---calculate-total-and-average-of-grouped-payload"><b>Exercise #6 - Calculate Total and Average of Grouped Payload</b></a></td>
     </tr>
     <tr>
-      <td><a href="#exercise-7/8---extract-values-from-specified-keys"><b>Exercise #7/8 - Extract Values from Specified Keys</b></a></td>
+      <td><a href="#exercise-78--extract-values-from-specified-keys"><b>Exercise #7/8 - Extract Values from Specified Keys</b></a></td>
     </tr>
   </tbody>
 </table>
