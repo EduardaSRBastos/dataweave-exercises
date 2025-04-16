@@ -1,0 +1,74 @@
+[
+  {
+      "product": "Laptop",
+      "region": "North",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 1200
+          },
+          {
+              "month": "Febraury",
+              "amount": 1500
+          },
+          {
+              "month": "March",
+              "amount": 1800
+          }
+      ]
+  },
+  {
+      "product": "smartphone",
+      "region": "North",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 800
+          },
+          {
+              "month": "Febraury",
+              "amount": 1000
+          },
+          {
+              "month": "March",
+              "amount": 1200
+          }
+      ]
+  },
+  {
+      "product": "Laptop",
+      "region": "South",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 1000
+          },
+          {
+              "month": "Febraury",
+              "amount": 1900
+          },
+          {
+              "month": "March",
+              "amount": 1500
+          }
+      ]
+  },
+  {
+      "product": "smartphone",
+      "region": "South",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 1000
+          },
+          {
+              "month": "Febraury",
+              "amount": 1200
+          },
+          {
+              "month": "March",
+              "amount": 800
+          }
+      ]
+  }
+]

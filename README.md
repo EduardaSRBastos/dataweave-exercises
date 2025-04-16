@@ -6,6 +6,12 @@
 
 <br>
 
+## Table of Contents
+
+- #### [Exercises from Medium - Rahul Kumar](#exercises-from-medium---rahul-kumar)
+- #### [Exercises from Medium - Faizan Arif](#exercises-from-medium---faizan-arif)
+
+<br>
 
 <h2> Exercises from
   <a href="https://medium.com/@rahulkumarofficial/dataweave-practice-made-easy-solved-questions-for-skill-building-7c2aa4c82376">
@@ -753,6 +759,7 @@
   </details>
 
   </td>
+  </tr>
   
   </tbody>
 </table> 
@@ -776,8 +783,12 @@
     <tr>
       <td><a href="#exercise-1---dynamic-data-transformation-with-functions"><b>Exercise #1 - Dynamic Data Transformation with Functions</b></a></td>
       <td><a href="#exercise-2---enrich-json-structure"><b>Exercise #2 - Enrich JSON Structure</b></a></td>
+      <td><a href="#exercise-3---add-new-field-to-each-object"><b>Exercise #3 - Add New Field to Each Object</b></a></td>
+      <td><a href="#exercise-4---sort-an-array-of-objects"><b>Exercise #4 - Sort an Array of Objects</b></a></td>
+      <td><a href="#exercise-6---calculate-total-and-average-of-grouped-payload"><b>Exercise #6 - Calculate Total and Average of Grouped Payload</b></a></td>
     </tr>
     <tr>
+      <td><a href="#exercise-7/8---extract-values-from-specified-keys"><b>Exercise #7/8 - Extract Values from Specified Keys</b></a></td>
     </tr>
   </tbody>
 </table>
@@ -907,6 +918,273 @@ payload.orders map ((order) -> {
   </details>
     
   </td>
+</tr>
+
+<tr>
+  <td>
+  
+  ### Exercise #3 - Add New Field to Each Object
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-3" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+[
+  { "name": "John", "department": "Engineering" },
+  { "name": "Jane", "department": "Marketing" },
+  { "name": "Doe", "department": "HR" }
+]
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+output application/json
+---
+payload map ( $ ++ ($.department match {
+    case "Engineering" -> {status: "Active"}
+    case "Marketing" -> {status: "Pending"}
+    case "HR" -> {status: "Inactive"}
+}))
+  ```
+  
+  </details>
+
+   </td>
+
+   <td>
+  
+  ### Exercise #4 - Sort an Array of Objects
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-4" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+[
+  { "task": "Task 1", "priority": "Medium" },
+  { "task": "Task 2", "priority": "High" },
+  { "task": "Task 3", "priority": "Low" },
+  { "task": "Task 4", "priority": "High" },
+  { "task": "Task 5", "priority": "Medium" }
+]
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+output application/json
+
+fun priorityLevel(priority) = priority match {
+    case "High" -> 1
+    case "Medium" -> 2
+    case "Low" -> 3
+}
+---
+// Alternative: payload orderBy $.priority[-1 to 0]
+
+payload orderBy priorityLevel($.priority)
+  ```
+  
+  </details>
+
+   </td>
+
+  </tr>
+
+<tr>
+  <td>
+  
+  ### Exercise #6 - Calculate Total and Average of Grouped Payload
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-6" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+[
+  {
+      "product": "Laptop",
+      "region": "North",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 1200
+          },
+          {
+              "month": "Febraury",
+              "amount": 1500
+          },
+          {
+              "month": "March",
+              "amount": 1800
+          }
+      ]
+  },
+  {
+      "product": "smartphone",
+      "region": "North",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 800
+          },
+          {
+              "month": "Febraury",
+              "amount": 1000
+          },
+          {
+              "month": "March",
+              "amount": 1200
+          }
+      ]
+  },
+  {
+      "product": "Laptop",
+      "region": "South",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 1000
+          },
+          {
+              "month": "Febraury",
+              "amount": 1900
+          },
+          {
+              "month": "March",
+              "amount": 1500
+          }
+      ]
+  },
+  {
+      "product": "smartphone",
+      "region": "South",
+      "sales": [
+          {
+              "month": "January",
+              "amount": 1000
+          },
+          {
+              "month": "Febraury",
+              "amount": 1200
+          },
+          {
+              "month": "March",
+              "amount": 800
+          }
+      ]
+  }
+]
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+output application/json  
+---
+payload groupBy $.region pluck {
+  region: $$,
+  totalsales: sum($.sales map sum($.amount)),
+  products: $.product map ((product) -> do {
+      var filteredProduct = $ filter ($.product == product)
+      ---
+        (product): {
+          totalsales: (filteredProduct.sales map sum($.amount))[0],
+          averagesales: (filteredProduct.sales map round(avg($.amount)))[0]
+        }
+    }) reduce ((item, acc = {}) -> acc ++ item)
+}
+  ```
+  
+  </details>
+
+   </td>
+
+   <td>
+  
+  ### Exercise #7/8- Extract Values from Specified Keys
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-7" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+{
+  "name1": "Root",
+  "children": [
+    {
+      "name2": "Child1",
+      "children": [
+        {
+          "name3": "Grandchild1",
+          "children": []
+        },
+        {
+          "name4": "Grandchild2",
+          "children": [
+            {
+              "name5": "GreatGrandchild1",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name6": "Child2",
+      "children": []
+    }
+  ]
+}
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+output application/json  
+
+fun getValues(value) =
+  flatten(value match {
+    case is String -> []
+    case is Array -> value map getValues($)
+    case is Object -> value pluck ((value, key) -> 
+        if (key startsWith "name")
+            value
+        else
+            getValues(value))
+  })
+---
+flatten(getValues(payload))
+  ```
+  
+  </details>
+
+   </td>
+
+  </tr>
+  
   
   </tbody>
 </table> 
