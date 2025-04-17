@@ -19,7 +19,7 @@
 </h2>
 
 
-### Table of Contents
+### Table of Exercises
 
 <table>
   <tbody align="center">
@@ -776,7 +776,7 @@
 </h2>
 
 
-### Table of Contents
+### Table of Exercises
 
 <table>
   <tbody align="center">
@@ -789,6 +789,8 @@
     </tr>
     <tr>
       <td><a href="#exercise-78--extract-values-from-specified-keys"><b>Exercise #7/8 - Extract Values from Specified Keys</b></a></td>
+      <td><a href="#exercise-9---determine-the-top-value-per-specific-field"><b>Exercise #9 - Determine the Top Value per Specific Field</b></a></td>
+      <td><a href="#exercise-10---find-and-multiply-every-number"><b>Exercise #10 - Find and Multiply Every Number</b></a></td>
     </tr>
   </tbody>
 </table>
@@ -1184,7 +1186,140 @@ flatten(getValues(payload))
    </td>
 
   </tr>
+
+  <tr>
+  <td>
   
+  ### Exercise #9 - Determine the Top Value per Specific Field
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-9" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+{
+  "students": [
+    {
+      "name": "John",
+      "courses": [
+        {
+          "name": "Math",
+          "grade": 95
+        },
+        {
+          "name": "Science",
+          "grade": 82
+        },
+        {
+          "name": "History",
+          "grade": 90
+        }
+      ]
+    },
+    {
+      "name": "Alice",
+      "courses": [
+        {
+          "name": "Math",
+          "grade": 88
+        },
+        {
+          "name": "Science",
+          "grade": 95
+        },
+        {
+          "name": "History",
+          "grade": 92
+        }
+      ]
+    },
+    {
+      "name": "Bob",
+      "courses": [
+        {
+          "name": "Math",
+          "grade": 75
+        },
+        {
+          "name": "Science",
+          "grade": 80
+        },
+        {
+          "name": "History",
+          "grade": 85
+        }
+      ]
+    }
+  ]
+}
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+output application/json  
+---
+payload.students flatMap ((student) -> student.courses map ((course) -> {
+    "course": course.name,
+    TopPerformingstudents: [
+      {
+        "name": student.name,
+        "grade": course.grade
+      }
+    ]
+  })) groupBy ((course) -> course.course) mapObject ((value, key, index) -> value maxBy ((item) -> item.TopPerformingstudents.grade[0]))
+  ```
+  
+  </details>
+
+   </td>
+
+   <td>
+  
+  ### Exercise #10 - Find and Multiply Every Number
+  
+  <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=EduardaSRBastos%2Fdataweave-exercises&path=faizan-arif-exercises%2Fexercise-10" target="_blank">DataWeave Playground<a>
+  
+  <details>
+    <summary>Input</summary>
+  
+  ```json
+[
+  2,
+  4,
+  "hello",
+  [5, { "name1": 10, "name2": "10" }, [9, 10, "dw", [12, [15, 17, "18", [19]]]]]
+]
+  ```
+  
+  </details>
+  
+  <details>
+    <summary>Script</summary>
+  
+  ```dataweave
+%dw 2.0
+import * from dw::util::Tree
+output application/json  
+---
+payload mapLeafValues ((value) -> 
+  if (value is Number)
+    value * 10
+  else
+    value)
+  ```
+  
+  </details>
+
+   </td>
+
+  </tr>
+
   
   </tbody>
 </table> 

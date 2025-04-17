@@ -1,0 +1,55 @@
+{
+  "students": [
+    {
+      "name": "John",
+      "courses": [
+        {
+          "name": "Math",
+          "grade": 95
+        },
+        {
+          "name": "Science",
+          "grade": 82
+        },
+        {
+          "name": "History",
+          "grade": 90
+        }
+      ]
+    },
+    {
+      "name": "Alice",
+      "courses": [
+        {
+          "name": "Math",
+          "grade": 88
+        },
+        {
+          "name": "Science",
+          "grade": 95
+        },
+        {
+          "name": "History",
+          "grade": 92
+        }
+      ]
+    },
+    {
+      "name": "Bob",
+      "courses": [
+        {
+          "name": "Math",
+          "grade": 75
+        },
+        {
+          "name": "Science",
+          "grade": 80
+        },
+        {
+          "name": "History",
+          "grade": 85
+        }
+      ]
+    }
+  ]
+}
